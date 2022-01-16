@@ -6,7 +6,7 @@
 /*   By: oaizab <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:06:57 by oaizab            #+#    #+#             */
-/*   Updated: 2022/01/11 03:34:20 by oaizab           ###   ########.fr       */
+/*   Updated: 2022/01/16 12:42:57 by oaizab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 # define BUFFER_SIZE 128
 
@@ -59,6 +60,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
 char	*get_next_line(int fd);
 
 t_list	*ft_lstnew(void *content);
@@ -70,5 +72,14 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void*));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*));
+
+int		ft_printf(const char *s, ...);
+int		ft_putchar(char c);
+int		ft_putnbr(int n);
+int		ft_putstr(const char *s);
+int		ft_putnbr_unsigned(unsigned int n);
+int		ft_putnbr_base(unsigned int n, char *base);
+int		ft_putnbr_addresse(unsigned long n, char *base);
+int		ft_printf_check(char c, va_list ap);
 
 #endif
