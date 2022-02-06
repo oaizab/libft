@@ -6,23 +6,11 @@
 /*   By: oaizab <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 20:46:51 by oaizab            #+#    #+#             */
-/*   Updated: 2022/01/16 12:43:46 by oaizab           ###   ########.fr       */
+/*   Updated: 2022/02/06 11:50:25 by oaizab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_strlen(const char *s)
-{
-	int	len;
-
-	len = 0;
-	while (s[len])
-	{
-		len++;
-	}
-	return (len);
-}
 
 int	ft_putstr(const char *s)
 {
