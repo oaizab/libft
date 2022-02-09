@@ -5,6 +5,7 @@ SRCS	=	ft_isprint.c \
 			ft_substr.c \
 			ft_atoi.c \
 			ft_itoa.c \
+			ft_abs.c \
 			ft_putendl_fd.c \
 			ft_strlcat.c \
 			ft_bzero.c \

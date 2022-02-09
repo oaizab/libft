@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oaizab <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: oaizab <oaizab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:06:57 by oaizab            #+#    #+#             */
-/*   Updated: 2022/01/16 12:42:57 by oaizab           ###   ########.fr       */
+/*   Updated: 2022/02/09 09:20:59 by oaizab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,7 @@ int		ft_putnbr_unsigned(unsigned int n);
 int		ft_putnbr_base(unsigned int n, char *base);
 int		ft_putnbr_addresse(unsigned long n, char *base);
 int		ft_printf_check(char c, va_list ap);
+
+int		ft_abs(int n);
 
 #endif
