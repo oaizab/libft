@@ -50,7 +50,9 @@ SRCS	=	ft_isprint.c \
 			ft_putnbr_base.c \
 			ft_putnbr.c \
 			ft_putstr.c \
-			ft_putnbr_unsigned.c
+			ft_putnbr_unsigned.c \
+			ft_max.c \
+			ft_min.c
 
 ODIR	=	obj
 OBJS	=	$(addprefix $(ODIR)/,$(SRCS:.c=.o))
