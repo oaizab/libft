@@ -6,7 +6,7 @@
 /*   By: oaizab <oaizab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:06:57 by oaizab            #+#    #+#             */
-/*   Updated: 2022/02/09 09:20:59 by oaizab           ###   ########.fr       */
+/*   Updated: 2022/02/09 15:50:56 by oaizab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,7 @@ int		ft_putnbr_addresse(unsigned long n, char *base);
 int		ft_printf_check(char c, va_list ap);
 
 int		ft_abs(int n);
+int		ft_max(int a, int b);
+int		ft_min(int a, int b);
 
 #endif
