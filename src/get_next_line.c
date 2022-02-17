@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oaizab <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: oaizab <oaizab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 03:32:08 by oaizab            #+#    #+#             */
-/*   Updated: 2022/01/11 03:34:53 by oaizab           ###   ########.fr       */
+/*   Updated: 2022/02/17 19:34:10 by oaizab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ char	*get_next_line(int fd)
 	if (fd < 0 || fd >= 10240)
 		return (NULL);
 	str = ft_strdup(prev[fd]);
+	if (!str)
+		return (NULL);
 	while (!ft_hasendl(str))
 	{
 		k = read(fd, buf, BUFFER_SIZE);

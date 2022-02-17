@@ -6,7 +6,7 @@
 /*   By: oaizab <oaizab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 21:54:02 by oaizab            #+#    #+#             */
-/*   Updated: 2022/02/17 18:08:02 by oaizab           ###   ########.fr       */
+/*   Updated: 2022/02/17 19:07:38 by oaizab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,8 @@ static void	cleari(char **tab, size_t i)
 {
 	while (i > 0)
 	{
-		if(tab[i])
-			free(tab[i]);
-		i--;
+		free(tab[--i]);
 	}
-	free(tab[0]);
 	free(tab);
 }
 
