@@ -6,7 +6,7 @@
 /*   By: oaizab <oaizab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 13:24:48 by oaizab            #+#    #+#             */
-/*   Updated: 2022/05/19 17:14:03 by oaizab           ###   ########.fr       */
+/*   Updated: 2022/05/19 17:24:44 by oaizab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ char	*ft_append_char(char *str, char c)
 {
 	size_t	len;
 
-	len = ft_strlen(str);
+	if (str)
+		len = ft_strlen(str);
+	else
+		len = 0;
 	str = ft_realloc(str, len + 2);
 	if (!str)
 		return (NULL);
