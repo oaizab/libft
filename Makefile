@@ -82,12 +82,10 @@ all:		$(NAME)
 
 $(ODIR)/%.o: $(SDIR)/%.c $(HEADER)
 			@mkdir -p $(@D)
-			@echo "$(BLUE)Compiling $(GREEN)$(basename $(@F))"
 			@$(CC) $(CFLAGS) -I$(IDIR) -c $< -o $@
 
 $(NAME):	$(OBJS)
 			@mkdir -p $(OUTPUT)
-			@echo "$(CYAN)Creating  $(YELLOW)libft ...$(CLEAR)"
 			@$(AR) $(OUTPUT)/$(NAME) $(OBJS)
 
 
