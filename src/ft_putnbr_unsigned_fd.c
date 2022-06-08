@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_unsigned_fd.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 21:03:48 by oaizab            #+#    #+#             */
-/*   Updated: 2022/06/08 09:52:06 by hhamza           ###   ########.fr       */
+/*   Created: 2022/06/08 09:37:41 by hhamza            #+#    #+#             */
+/*   Updated: 2022/06/08 09:53:00 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_nb_size(int nb)
+static int	ft_nb_size(unsigned int nb)
 {
 	int	size;
 
@@ -20,10 +20,6 @@ static int	ft_nb_size(int nb)
 	if (nb == 0)
 	{
 		return (1);
-	}
-	else if (nb < 0)
-	{
-		++size;
 	}
 	while (nb != 0)
 	{
@@ -33,25 +29,21 @@ static int	ft_nb_size(int nb)
 	return (size);
 }
 
-int	ft_putnbr_fd(int nb, int fd)
+static void	ft_print_nb_fd(unsigned int n, int fd)
 {
-	if (nb == -2147483648)
+	if (n > 9)
 	{
-		ft_putstr_fd("-2147483648", fd);
-	}
-	else if (nb < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-1 * nb, fd);
-	}
-	else if (nb > 9)
-	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
+		ft_print_nb_fd(n / 10, fd);
+		ft_print_nb_fd(n % 10, fd);
 	}
 	else
 	{
-		ft_putchar_fd(nb + '0', fd);
+		ft_putchar_fd(n + '0', fd);
 	}
+}
+
+int	ft_putnbr_unsigned_fd(unsigned int nb, int fd)
+{
+	ft_print_nb_fd(nb, fd);
 	return (ft_nb_size(nb));
 }

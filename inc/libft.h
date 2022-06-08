@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oaizab <oaizab@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:06:57 by oaizab            #+#    #+#             */
-/*   Updated: 2022/06/06 09:40:29 by oaizab           ###   ########.fr       */
+/*   Updated: 2022/06/08 10:12:07 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,7 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
 char	*ft_append_char(char *str, char c);
 
 char	*get_next_line(int fd);
@@ -84,6 +81,14 @@ int		ft_putnbr_unsigned(unsigned int n);
 int		ft_putnbr_base(unsigned int n, char *base);
 int		ft_putnbr_addresse(unsigned long n, char *base);
 int		ft_printf_check(char c, va_list ap);
+
+int		ft_fprintf(int fd, const char *format, ...);
+int		ft_putchar_fd(char c, int fd);
+int		ft_putnbr_fd(int n, int fd);
+int		ft_putstr_fd(char *s, int fd);
+int		ft_putnbr_unsigned_fd(unsigned int nb, int fd);
+int		ft_putnbr_base_fd(unsigned int n, char *base, int fd);
+int		ft_putnbr_address_fd(unsigned long n, char *base, int fd);
 
 int		ft_abs(int n);
 int		ft_max(int a, int b);

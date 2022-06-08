@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_address_fd.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hhamza <hhamza@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/09 21:03:48 by oaizab            #+#    #+#             */
-/*   Updated: 2022/06/08 09:52:06 by hhamza           ###   ########.fr       */
+/*   Created: 2022/06/08 09:38:35 by hhamza            #+#    #+#             */
+/*   Updated: 2022/06/08 09:50:21 by hhamza           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_nb_size(int nb)
+static int	ft_nb_size(unsigned long nb)
 {
 	int	size;
 
@@ -21,37 +21,30 @@ static int	ft_nb_size(int nb)
 	{
 		return (1);
 	}
-	else if (nb < 0)
-	{
-		++size;
-	}
 	while (nb != 0)
 	{
-		nb = nb / 10;
+		nb = nb / 16;
 		++size;
 	}
 	return (size);
 }
 
-int	ft_putnbr_fd(int nb, int fd)
+static void	ft_print_nb_fd(unsigned long n, char *base, int fd)
 {
-	if (nb == -2147483648)
+	if (n > 15)
 	{
-		ft_putstr_fd("-2147483648", fd);
-	}
-	else if (nb < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-1 * nb, fd);
-	}
-	else if (nb > 9)
-	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
+		ft_print_nb_fd(n / 16, base, fd);
+		ft_print_nb_fd(n % 16, base, fd);
 	}
 	else
 	{
-		ft_putchar_fd(nb + '0', fd);
+		ft_putchar_fd(base[n], fd);
 	}
-	return (ft_nb_size(nb));
+}
+
+int	ft_putnbr_address_fd(unsigned long nb, char *base, int fd)
+{
+	ft_putstr_fd("0x", fd);
+	ft_print_nb_fd(nb, base, fd);
+	return (ft_nb_size(nb) + 2);
 }
