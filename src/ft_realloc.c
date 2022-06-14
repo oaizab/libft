@@ -6,7 +6,7 @@
 /*   By: oaizab <oaizab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 13:29:23 by oaizab            #+#    #+#             */
-/*   Updated: 2022/05/19 17:16:02 by oaizab           ###   ########.fr       */
+/*   Updated: 2022/06/14 10:13:33 by oaizab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void	*ft_realloc(void *ptr, size_t size)
 	if (size == 0)
 	{
 		free(ptr);
-		return (malloc(0));
+		return (ft_calloc(0, 0));
 	}
 	if (!ptr)
-		return (malloc(size));
-	tmp = malloc(size);
+		return (ft_calloc(1, size));
+	tmp = ft_calloc(1, size);
 	if (!tmp)
 		return (free(ptr), NULL);
 	ft_memcpy(tmp, ptr, size);
