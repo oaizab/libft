@@ -59,7 +59,8 @@ SRCS	=	ft_abs.c \
 			ft_substr.c \
 			ft_tolower.c \
 			ft_toupper.c \
-			get_next_line.c
+			get_next_line.c \
+			ft_strcmp.c
 
 ODIR	=	obj
 OBJS	=	$(addprefix $(ODIR)/,$(SRCS:.c=.o))
