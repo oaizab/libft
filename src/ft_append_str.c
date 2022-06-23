@@ -6,7 +6,7 @@
 /*   By: oaizab <oaizab@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 09:34:23 by oaizab            #+#    #+#             */
-/*   Updated: 2022/06/06 09:39:32 by oaizab           ###   ########.fr       */
+/*   Updated: 2022/06/23 15:21:59 by oaizab           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_append_str(char *str, char *c)
 {
 	size_t	len;
 
+	if (c == NULL)
+		c = "";
 	if (str)
 		len = ft_strlen(str);
 	else
